@@ -2,8 +2,8 @@ export const PHONE = "+254 20 734 9030";
 export const PHONE_ALT = "0732 314 372";
 export const EMAIL = "info@qualityhealthcare.co.ke";
 export const ADDRESS = "P.O. Box 72409-00100, Nairobi, Kenya";
-export const WEBSITE = "www.qualityhealthcare.co.ke";
-export const SITE_URL = "https://www.qualityhealthcare.co.ke";
+export const WEBSITE = "https://qsh.maneno.co.ke";
+export const SITE_URL = "https://qsh.maneno.co.ke/";
 
 export const NAV = [
   { label: "Home", href: "/" },
