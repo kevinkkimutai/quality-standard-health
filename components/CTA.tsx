@@ -4,7 +4,7 @@ const contacts = [
   {
     icon: Phone,
     title: "Call Us",
-    lines: ["+254 20 734 9030 / 0732 314 372"],
+    lines: ["020 802 5371 / 0732 314 372"],
   },
   {
     icon: Mail,

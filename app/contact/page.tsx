@@ -186,14 +186,14 @@ About Your
                 href="tel:+254207349030"
                 className="mt-1 block text-[10px] font-bold text-[#63228f]"
               >
-                +254 20 734 9030
+                020 802 5371
               </a>
 
               <a
                 href="tel:+254732314372"
                 className="block text-[10px] text-[#63228f]"
               >
-                +254 732 314 372
+                +254 72 281 4372
               </a>
             </div>
 
@@ -557,11 +557,11 @@ About Your
                     </p>
 
                     <p className="mt-1 text-[11px] text-[#777b91]">
-                      +254 20 734 9030
+                      020 802 5371
                     </p>
 
                     <p className="text-[11px] text-[#777b91]">
-                      +254 732 314 372
+                      +254 72 281 4372
                     </p>
                   </div>
                 </div>
