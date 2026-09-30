@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">First aid sign</title>
+  <desc id="desc">Green circular sign with a white medical cross and stethoscope</desc>
+  <circle cx="120" cy="120" r="104" fill="#218c5a"/>
+  <circle cx="120" cy="120" r="88" fill="none" stroke="#fff" stroke-width="5"/>
+  <path fill="#fff" d="M108 58h24v50h50v24h-50v50h-24v-50H58v-24h50z"/>
+  <path d="M82 161c0 18 13 27 27 27s27-9 27-27v-9" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="138" cy="148" r="7" fill="#fff"/>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Personal protective equipment sign</title>
+  <desc id="desc">Blue circular safety sign with a white hard hat</desc>
+  <circle cx="120" cy="120" r="104" fill="#1769aa"/>
+  <circle cx="120" cy="120" r="88" fill="none" stroke="#fff" stroke-width="5"/>
+  <path fill="#fff" d="M70 130h100v18H70zM78 125c2-29 19-49 42-55v-12h18v12c23 6 40 26 42 55h-18c-2-19-11-31-24-36v25H98v-25c-13 5-22 17-24 36z"/>
+  <path fill="#1769aa" d="M101 99h38v18h-38z"/>
+</svg>

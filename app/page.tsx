@@ -9,11 +9,13 @@ import {
   Heart,
   Eye,
   Target,
-  Stethoscope,
-  Shield, Building2,
-  GraduationCap,
-  ClipboardCheck,
+  Shield,
+  Building2,
   Activity,
+  HardHat,
+  FileCheck2,
+  Flame,
+  HeartPulse,
   Phone,
   Mail,
   MapPin,
@@ -24,18 +26,25 @@ import {
 } from "lucide-react";
 
 import { useEffect, useState } from "react";
-import heroDoctor from "@/images/hero-doctor.jpg";
 import { HERO_BADGES, TESTIMONIALS } from "@/lib/data";
-import care from "@/images/doc1.webp"
+import homeHero from "@/images/services/doc-worker.jpeg";
+import ppe from "@/images/ppe.jpg";
+import doc from "@/images/doc.webp";
 
-const badgeIcons = { users: Users, shield: Shield, building: Building2, heart: Heart };
+const badgeIcons = {
+  users: Users,
+  shield: Shield,
+  building: Building2,
+  heart: Heart,
+};
 export default function Home() {
   const [testimonialIndex, setTestimonialIndex] = useState(0);
   const testimonial = TESTIMONIALS[testimonialIndex];
 
   const changeTestimonial = (direction: number) => {
-    setTestimonialIndex((current) =>
-      (current + direction + TESTIMONIALS.length) % TESTIMONIALS.length,
+    setTestimonialIndex(
+      (current) =>
+        (current + direction + TESTIMONIALS.length) % TESTIMONIALS.length,
     );
   };
 
@@ -49,28 +58,29 @@ export default function Home() {
 
   const services = [
     {
-      icon: Stethoscope,
-      title: "Medical Services",
+      icon: HardHat,
+      title: "Occupational Safety & Health",
       items: [
-        "Occupational medical examination",
-        "Pre-employment and exit fitness certificate",
-        "Periodic (Annual) and return to work examinations",
-        "Wellness programs at work including well man and well woman programs",
-        "Occupational First Aid training",
+        "Occupational health assessments",
+        "Workplace health support",
+        "Occupational health surveillance",
+        "Workplace safety awareness",
+        "Risk-related health assessments",
       ],
     },
     {
-      icon: GraduationCap,
-      title: "Training",
+      icon: FileCheck2,
+      title: "Fit to Work Medical Assessments",
       items: [
-        "Occupational First Aid training",
-        "Disease management and evacuation procedures training",
-        "Occupational Safety and Health (safety committee training)",
-        "Fire marshals Audits and other services",
+        "Fit-to-work certification",
+        "Pre-employment medical tests",
+        "Annual statutory OSH medical tests",
+        "Exit medical tests",
+        "Return-to-work assessments after illness, injury or sick leave",
       ],
     },
     {
-      icon: ClipboardCheck,
+      icon: ShieldCheck,
       title: "Audits & Other Services",
       items: [
         "Occupational Safety and Health audit",
@@ -80,67 +90,94 @@ export default function Home() {
       ],
     },
     {
-      icon: Activity,
-      title: "Additional Services",
+      icon: Flame,
+      title: "Statutory Training & Certification",
       items: [
-        "Health and safety consultancy",
-        "Workplace wellness programs",
-        "Emergency preparedness and response",
-        "Environmental health assessments",
-        "On-site and mobile clinic services",
+        "Certified by DOSHS / NITA",
+        "Occupational Safety & Health",
+        "Occupational First Aid",
+        "Fire Marshals",
+        "Mental Wellbeing",
+        "Ergonomics",
+        "Emergency preparedness",
       ],
     },
     {
-      icon: Users,
-      title: "Corporate Health Programs",
+      icon: HeartPulse,
+      title: "Vocational Rehabilitation",
       items: [
-        "Employee wellness programs",
-        "Chronic disease management",
-        "Health education and awareness",
-        "Lifestyle and nutrition counselling",
-        "On-site health screening",
+        "Counselling",
+        "Sessional referrals",
+        "Return-to-work support",
+        "Post-injury support",
+        "Post-illness support",
       ],
     },
   ];
 
-  const team = [
+  const safetySigns = [
+    ["/safety/ppe-sign.svg", "Prevent", "PPE, hazard awareness and safer work practices."],
+    ["/safety/warning-sign.svg", "Protect", "Risk assessment, fire safety and emergency readiness."],
+    ["/safety/first-aid-sign.svg", "Assess", "Clinical checks that confirm workers are fit to work."],
+    ["/safety/certified-sign.svg", "Support", "Training, certification and rehabilitation through recovery."],
+  ] as const;
+
+  const workerCategories = [
+    "Corporates",
+    "NGOs",
+    "Schools",
+    "Warehouses",
+    "Workshops",
+    "Call centres",
+    "Roads & transport",
+    "Office-based teams",
+  ];
+
+  const expertise = [
     {
-      image: "/logo.png",
-      name: "Dr. Sarah Wanjiku",
-      role: "Medical Director",
+      image: "/safety/first-aid-sign.svg",
+      title: "Occupational Health",
+      text: "Medical assessments and practical support to keep workers fit and well.",
     },
     {
-      image: "/logo.png",
-      name: "Dr. James Mwangi",
-      role: "Occupational Health Specialist",
+      image: "/safety/warning-sign.svg",
+      title: "Workplace Safety",
+      text: "Risk-aware guidance that helps organizations prevent incidents and protect people.",
     },
     {
-      image: "/logo.png",
-      name: "Sister Achieng",
-      role: "Senior Nurse",
+      image: "/safety/certified-sign.svg",
+      title: "Training & Certification",
+      text: "Skills-based training in first aid, fire safety, OSH and emergency preparedness.",
+    },
+    {
+      image: "/safety/ppe-sign.svg",
+      title: "Worker Support",
+      text: "Wellbeing, rehabilitation and return-to-work support throughout the worker journey.",
     },
   ];
-function Eyebrow({ children }: { children: React.ReactNode }) {
-  return <p className="text-xs font-bold uppercase tracking-widest text-brand">{children}</p>;
-}
+  function Eyebrow({ children }: { children: React.ReactNode }) {
+    return (
+      <p className="text-xs font-semibold uppercase text-brand">{children}</p>
+    );
+  }
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-[#201348]">
-
-  <section className="relative overflow-hidden bg-linear-to-b from-brand-soft to-white">
+      <section className="relative overflow-hidden bg-linear-to-b from-brand-soft to-white">
         {/* Photo, desktop only: fills the full section height, feathered on the left with a CSS mask
             (not a baked-in image) so it always covers correctly regardless of the section's actual height. */}
-        <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[52%] lg:block">
+        <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[50%] lg:block">
           <div className="absolute -inset-x-10 -inset-y-16 rounded-[4rem] bg-brand/25 blur-3xl" />
           <div
             className="absolute inset-0 overflow-hidden"
             style={{
-              WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 30%)",
+              WebkitMaskImage:
+                "linear-gradient(to right, transparent 0%, black 30%)",
               maskImage: "linear-gradient(to right, transparent 0%, black 30%)",
             }}
           >
             <Image
-              src={heroDoctor}
-              alt="A smiling doctor in a white coat holding a tablet, with the caption 'Better Care for a Healthier Tomorrow'"
+              src={homeHero}
+              alt="African healthcare professional checking a patient's blood pressure"
               fill
               sizes="52vw"
               className="object-cover object-right"
@@ -149,30 +186,47 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
           </div>
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-2 py-16 sm:px-2 lg:py-24">
+        <div className="relative mx-auto max-w-7xl ps-2 py-16 sm:ps-2 lg:py-24">
           <div className="max-w-xl lg:pr-[8%]">
-            <Eyebrow>Quality Standard Health Care LTD</Eyebrow>
-            <h1 className="mt-2 font-display text-5xl font-bold  text-ink sm:text-6xl">
-              Your <span className="text-brand">Health</span><br />Our Priority
+            <Eyebrow>A Step to Safety is a Step to Health</Eyebrow>
+            <h1 className="mt-1 font-display text-4xl font-bold  text-ink sm:text-5xl">
+              Occupational <br /> <span className="text-brand">Safety</span> &{" "}
+              <span className="text-brand">Health</span>
             </h1>
-            <p className="mt-3 max-w-md text-ink/70">
-              We provide high-quality, professional and comprehensive healthcare services to meet the needs of our clients and the community.
+            <p className="mt-3 text-ink/70">
+              Our core business is Occupational Safety and Health. We combine
+              safety signs, clinical assessments and practical training to
+              protect every worker in every workplace.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
-              <Link href="/services" className="inline-flex items-center gap-2 rounded-[5px] bg-brand-dark px-6 py-3 text-sm font-semibold text-white hover:bg-brand-deep">
-                Our Services <ArrowRight size={16} />
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-2 rounded-[5px] bg-brand-dark px-4 py-3 text-sm font-semibold text-white hover:bg-brand-deep"
+              >
+                Explore Our Services
+                <ArrowRight size={16} />
               </Link>
-              <Link href="/contact" className="inline-flex items-center gap-2 rounded-[5px] border border-brand-dark px-6 py-3 text-sm font-semibold text-brand-dark hover:bg-brand-soft">
-                Contact Us <ArrowRight size={16} />
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 rounded-[5px] border border-brand-dark px-4 py-3 text-sm font-semibold text-brand-dark hover:bg-brand-soft"
+              >
+                Request a Consultation <ArrowRight size={16} />
               </Link>
             </div>
             <ul className="mt-9 grid grid-cols-4 gap-3 text-center">
               {HERO_BADGES.map((b) => {
                 const I = badgeIcons[b.icon as keyof typeof badgeIcons];
                 return (
-                  <li key={b.label} className="flex flex-col items-center gap-2">
-                    <span className="grid size-11 place-items-center rounded-full bg-white text-brand shadow-sm"><I size={17} /></span>
-                    <span className="text-[11px] font-semibold leading-tight text-ink">{b.label}</span>
+                  <li
+                    key={b.label}
+                    className="flex flex-col items-center gap-2"
+                  >
+                    <span className="grid size-11 place-items-center rounded-full bg-white text-brand shadow-sm">
+                      <I size={17} />
+                    </span>
+                    <span className="text-[11px] font-semibold leading-tight text-ink">
+                      {b.label}
+                    </span>
                   </li>
                 );
               })}
@@ -181,38 +235,52 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 
           {/* Photo, mobile/tablet only: plain card, no glow panel */}
           <div className="relative mt-10 aspect-[4/3] overflow-hidden rounded-[5px] shadow-xl lg:hidden">
-            <Image src={heroDoctor} alt="A smiling doctor in a white coat holding a tablet, with the caption 'Better Care for a Healthier Tomorrow'" fill sizes="100vw" className="object-cover" priority />
+            <Image
+              src={homeHero}
+              alt="African healthcare professional checking a patient's blood pressure"
+              fill
+              sizes="100vw"
+              className="object-cover"
+              priority
+            />
           </div>
         </div>
       </section>
 
-
       <section id="about" className="bg-white py-10 sm:py-16">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-2 lg:grid-cols-[43%_57%] ">
-
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#682696]">
-              About Us
+              Who We Are
             </p>
 
-            <h2 className="mt-3 max-w-97.5 text-xl font-bold text-[#21194b] sm:text-4xl">
-              Quality Standard
+            <h2 className="mt-2 max-w-97.5 text-xl font-bold text-[#21194b] sm:text-4xl">
+              Healthier Workers.
               <br />
-              Health Care LTD
+              Safer Workplaces.
             </h2>
 
-            <p className="mt-3 max-w-97.5 text-md text-[#777187]">
-              We are a duly registered under the Kenyan Company Act Cap 496.
-              We provide high-quality, professional and comprehensive
-              healthcare services to meet the needs of our clients and the
-              community.
+            <p className="mt-3 max-w-125 text-md text-[#777187] leading-tight">
+              Quality Standard Health Care LTD is committed to promoting
+              Occupational Safety and Health through professional clinical
+              care, workplace safety training, medical assessments, worker
+              wellbeing and rehabilitation support.
+            </p>
+            <p className="mt-1 max-w-125 text-md text-[#777187] leading-tight">
+              Our approach brings together{" "}
+              <span className="text-brand ">
+                {" "}
+                clinical health and occupational safety{" "}
+              </span>
+              to help organizations protect their most important resource:
+              their people.
             </p>
 
             <Link
               href="/contact"
               className="mt-4 inline-flex items-center gap-3 rounded-[5px] border border-[#75409c] px-5 py-2.5 text-sm font-bold text-[#63248d]"
             >
-              Learn More
+              Learn More About Us
               <ArrowRight size={12} />
             </Link>
           </div>
@@ -222,10 +290,10 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 
             <div className="relative overflow-hidden rounded-[5px]">
               <Image
-                src="/images/quality.jpg"
+                src={ppe}
                 alt="Medical stethoscope"
-                width={7000}
-                height={4000}
+                width={1000}
+                height={1000}
                 className="h-62.5 w-full object-cover sm:h-[290px]"
               />
             </div>
@@ -239,9 +307,7 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 
       <section className="bg-white">
         <div className="mx-auto grid max-w-7xl gap-3 px-2 lg:grid-cols-[1fr_240px]">
-
           <div className="relative overflow-hidden rounded-[5px] border border-[#ece7f5] bg-linear-to-br from-[#f7f4ff] to-[#eee9fa] p-7 sm:p-5">
-
             {/* Background graphic */}
             <div className="pointer-events-none absolute bottom-[-80px] left-[25%] h-[280px] w-[280px] rounded-full border-[55px] border-white/40" />
 
@@ -255,7 +321,6 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
               </p>
 
               <div className="mt-5 grid gap-4 sm:grid-cols-2">
-
                 <div className="flex gap-4">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-[#64258e] shadow-sm">
                     <Eye size={19} />
@@ -267,8 +332,9 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
                     </h3>
 
                     <p className="mt-2 text-sm leading-[1.65] text-[#77718b]">
-                      To assist you as an organization to reduce future
-                      health impacts from your occupational hazards.
+                      A step to safety is a step to health. We help
+                      organizations reduce future health impacts from
+                      occupational hazards.
                     </p>
                   </div>
                 </div>
@@ -284,16 +350,18 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
                     </h3>
 
                     <p className="mt-2 text-sm leading-[1.65] text-[#77718b]">
-                      As our name suggests, we are committed to high quality
-                      healthcare and standardized practices in line with
-                      Occupational Safety and Health Act (OSHA, 2007). We are
-                      focused to listen to the needs of our clients and make
-                      standardized services which go a long way to satisfy
-                      the need and achieve timely compliance with the law.
+                      We are committed to providing high-quality clinical care
+                      and standardized Occupational Safety and Health
+                      practices.
+                      <br />
+                      We focus on listening to the needs of our clients and
+                      workers, delivering practical solutions and helping
+                      organizations meet their workplace health and safety
+                      responsibilities so every worker can be safe, healthy
+                      and fit to work.
                     </p>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
@@ -308,24 +376,52 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
                 <Activity size={25} />
               </div>
 
-              <p className="mt-5 text-md font-bold uppercase tracking-[.35em] text-[#8b5ca6]">
-                Healthier
+              <p className="mt-5 text-md font-bold  text-[#8b5ca6]">
+              Prevention before harm.
+
               </p>
 
-              <p className="text-md font-bold uppercase tracking-[.35em] text-[#8b5ca6]">
-                People
+              <p className="text-md font-bold text-[#8b5ca6]">
+              Safety before risk.
+
               </p>
 
-              <p className="text-md font-bold uppercase tracking-[.35em] text-[#8b5ca6]">
-                Stronger
+              <p className="text-md font-bold  text-[#8b5ca6]">
+                Health before illness.
               </p>
 
-              <p className="text-md font-bold uppercase tracking-[.35em] text-[#8b5ca6]">
-                Communities
-              </p>
+              
 
               <div className="mx-auto mt-4 h-0.5 w-12 bg-[#9b6cb5]" />
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#fbfaff] py-10 sm:py-14">
+        <div className="mx-auto max-w-7xl px-2">
+          <div className="max-w-2xl">
+            <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#682696]">
+              SAFETY + CLINICAL CARE
+            </p>
+            <h2 className="mt-2 text-xl font-bold text-[#21194b] sm:text-4xl">
+              Read the signs. Prevent the harm. Protect the worker.
+            </h2>
+            <p className="mt-3 text-md text-[#777187]">
+              Whether you fly, drive, sit, lift, build or manually make bread,
+              your work affects your health. We use safety signs and clinical
+              signs together to identify risk early and support healthier work.
+            </p>
+          </div>
+
+          <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {safetySigns.map(([image, title, text]) => (
+              <div key={title} className="rounded-[5px] border border-[#ebe6f5] bg-white p-5 shadow-[0_4px_18px_rgba(56,31,84,.04)]">
+                <Image src={image} alt={`${title} safety sign`} width={40} height={40} />
+                <h3 className="text-md font-bold text-[#35265d]">{title}</h3>
+                <p className=" text-xs leading-[1.5] text-[#777187]">{text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -336,25 +432,21 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 
       <section id="services" className="bg-white py-10 sm:py-16">
         <div className="mx-auto max-w-7xl px-2">
-
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#682696]">
-              Our Services
+            OUR CORE SERVICES
             </p>
 
-            <h2 className="mt-2 max-w-100 text-xl font-bold leading-[.95] text-[#21194b] sm:text-4xl">
-              Comprehensive
-              <br />
-              Healthcare Services
+            <h2 className="mt-2 max-w-150 text-xl font-bold leading-[.95] text-[#21194b] sm:text-4xl">
+              Comprehensive Occupational Safety & Health Services
             </h2>
 
             <p className="mt-3 text-md text-[#777187]">
-              We are all-inclusive, all rounded specialists in the listed services.
+             We provide the assessments, statutory training, certification and support needed to keep workers safe, healthy and fit to work.
             </p>
           </div>
 
           <div className="mt-4 grid gap-2 md:grid-cols-2 lg:grid-cols-3">
-
             {services.slice(0, 3).map((service) => {
               const Icon = service.icon;
 
@@ -387,11 +479,8 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
                 </div>
               );
             })}
-
-
           </div>
           <div className="mt-2 grid gap-2 md:grid-cols-2">
-
             {services.slice(3).map((service) => {
               const Icon = service.icon;
 
@@ -428,19 +517,42 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
         </div>
       </section>
 
+      <section className="bg-white py-10 sm:py-14">
+        <div className="mx-auto grid max-w-7xl items-center gap-8 px-2 lg:grid-cols-[.8fr_1.2fr]">
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#682696]">
+              EVERY WORKER, EVERY WORKPLACE
+            </p>
+            <h2 className="mt-2 text-xl font-bold text-[#21194b] sm:text-4xl">
+              Any worker category is our client.
+            </h2>
+            <p className="mt-3 text-md leading-[1.6] text-[#777187]">
+              If you fly, drive, sit, lift, build or manually make bread from
+              any space, you are our concern. We help employers support every
+              worker&apos;s safety and health journey.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {workerCategories.map((category) => (
+              <span key={category} className="rounded-full border border-[#d9c7e8] bg-[#fbf8ff] px-4 py-2 text-sm font-semibold text-[#5f2b87]">
+                {category}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* =========================================================
           WHY CHOOSE US
       ========================================================= */}
 
       <section className="relative overflow-hidden bg-[#291942]">
-
         <div className="grid min-h-75 lg:grid-cols-[42%_58%]">
-
           {/* Image */}
           <div className="relative min-h-75 overflow-hidden">
             <Image
-              src={care}
-              alt="Healthcare professional holding heart"
+              src={doc}
+              alt="African healthcare professional checking a patient's blood pressure"
               fill
               className="object-cover object-start opacity-50"
             />
@@ -450,7 +562,6 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 
           {/* Content */}
           <div className="relative overflow-hidden px-7 py-12 text-white sm:px-12 lg:px-14">
-
             <div className="pointer-events-none absolute -right-25 -top-25 h-70 w-70 rounded-full border-50 border-white/5" />
 
             <p className="relative text-sm font-bold uppercase text-[#c6a8db]">
@@ -464,37 +575,35 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
             </h2>
 
             <p className="relative mt-2 max-w-117.5 text-md leading-[1.6] text-[#cfc7dc]">
-              We are committed to delivering exceptional healthcare services
-              with professionalism, integrity and care.
+              Our core business is Occupational Safety and Health, strengthened
+              by clinical knowledge and practical worker-centred support.
             </p>
 
             <div className="relative mt-8 grid grid-cols-2 gap-6 lg:grid-cols-4">
-
               {[
                 [
                   ShieldCheck,
-                  "Experienced Professionals",
-                  "Our team is composed of qualified and experienced healthcare experts.",
+                  "Occupational Safety Focus",
+                  "Our core business is Occupational Safety and Health.",
                 ],
                 [
                   Heart,
-                  "Modern Facilities",
-                  "Equipped with modern technology to provide accurate and efficient care.",
+                  "Professional Healthcare",
+                  "We combine clinical healthcare knowledge with occupational health needs.",
                 ],
                 [
                   Users,
-                  "Client-Centered Approach",
-                  "We prioritize your needs and ensure personalized care.",
+                  "DOSHS / NITA Training",
+                  "Statutory training in OSH, First Aid, Fire Marshals, Mental Wellbeing, Ergonomics and Emergency Preparedness.",
                 ],
                 [
                   ShieldCheck,
-                  "Compliance & Safety",
-                  "We adhere to national and international health and safety standards.",
+                  "Every Worker Matters",
+                  "We serve corporates, NGOs, schools, warehouses, workshops, call centres and roads.",
                 ],
               ].map(([Icon, title, text]) => (
                 <div key={title as string}>
                   <div className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white">
-                   
                     <Icon size={15} />
                   </div>
 
@@ -507,7 +616,6 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
                   </p>
                 </div>
               ))}
-
             </div>
           </div>
         </div>
@@ -517,60 +625,49 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
           TEAM
       ========================================================= */}
 
-      <section id="team" className="bg-white py-10 sm:py-16">
+      <section id="expertise" className="bg-white py-10 sm:py-16">
         <div className="mx-auto grid max-w-7xl items-center gap-4 px-2 lg:grid-cols-[42%_58%]">
-
           <div>
             <p className="text-sm font-bold uppercase text-[#682696]">
-              Our Team
+              OUR EXPERTISE
             </p>
 
             <h2 className="mt-1 text-lg font-bold text-[#21194b] sm:text-4xl">
-              Meet Our Professional Team
+              Professionals Working for Safer Workplaces
             </h2>
 
             <p className="mt-2 max-w-97.5 text-md text-[#777187]">
-              Our team of healthcare professionals is dedicated to providing
-              compassionate, high-quality care and support to our clients.
+             Our team brings together healthcare, occupational safety, training and worker-support expertise to provide practical solutions for organizations and their people.
             </p>
 
             <a
-              href="#contact"
+              href="#services"
               className="mt-4 inline-flex items-center gap-3 rounded-[5px] border border-[#75409c] px-5 py-2.5 text-sm font-bold text-[#63248d]"
             >
-              Meet Our Team
+              Explore Our Services
               <ArrowRight size={14} />
             </a>
           </div>
 
-          <div className="grid grid-cols-3 gap-2">
-
-            {team.map((person) => (
+          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+            {expertise.map(({ image, title, text }) => (
               <div
-                key={person.name}
-                className="overflow-hidden rounded-[14px] bg-[#f5f2fa]"
+                key={title}
+                className="rounded-lg border border-[#ebe6f5] bg-[#f8f6fc] p-4 transition-colors hover:border-[#cbb3df]"
               >
-                <div className="relative h-37.5">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-sm">
                   <Image
-                    src={person.image}
-                    alt={person.name}
-                    fill
-                    className="object-cover"
+                    src={image}
+                    alt={`${title} workplace support`}
+                    width={48}
+                    height={48}
                   />
                 </div>
 
-                <div className="px-3 py-3">
-                  <p className="text-xs font-bold text-[#38245e]">
-                    {person.name}
-                  </p>
-
-                  <p className="mt-1 text-xs text-[#8a8395]">
-                    {person.role}
-                  </p>
-                </div>
+                <p className="mt-3 text-sm font-bold text-[#38245e]">{title}</p>
+                <p className="mt-1 text-xs leading-5 text-[#8a8395]">{text}</p>
               </div>
             ))}
-
           </div>
         </div>
       </section>
@@ -581,16 +678,15 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 
       <section className="bg-[#f8f7ff] py-10 sm:py-16">
         <div className="mx-auto grid max-w-7xl items-center gap-4 px-2 lg:grid-cols-[38%_62%]">
-
           <div>
             <p className="text-sm font-bold uppercase text-[#682696]">
-              What Our Clients Say
+              WHAT OUR CLIENTS SAY
             </p>
 
             <h2 className="mt-2 text-xl font-bold text-[#21194b] sm:text-4xl">
-              Trusted by Individuals
+             Trusted by Organizations
               <br />
-              and Organizations
+              & Workers
             </h2>
 
             <p className="mt-3 max-w-100 text-md leading-[1.6] text-[#777187]">
@@ -605,7 +701,6 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
           </div>
 
           <div className="relative rounded-[5px] bg-white p-4 shadow-[0_8px_35px_rgba(50,30,80,.07)] sm:p-6">
-
             <Quote
               className="absolute left-6 top-6 text-[#71309b]/30"
               size={27}
@@ -620,9 +715,7 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
                 — {testimonial.name}
               </p>
 
-              <p className="text-xs text-[#8c8497]">
-                {testimonial.role}
-              </p>
+              <p className="text-xs text-[#8c8497]">{testimonial.role}</p>
             </div>
 
             <div className="absolute right-6 top-1/2 flex -translate-y-1/2 gap-2">
@@ -673,37 +766,32 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
         id="contact"
         className="relative overflow-hidden bg-linear-to-br from-[#35194d] via-[#4d216d] to-[#2a163e] py-10 text-white sm:py-16"
       >
-
         {/* Decorative background graphics */}
         <div className="pointer-events-none absolute -left-20 -bottom-7.5 h-55 w-45 rotate-[-30deg] rounded-[50%] border-45 border-white/5" />
 
         <div className="pointer-events-none absolute -right-20 -top-7.5 h-55 w-45 rotate-30 rounded-[50%] border-45 border-white/5" />
 
         <div className="relative mx-auto grid max-w-7xl gap-10 px-2 lg:grid-cols-[38%_62%]">
-
           <div>
             <p className="text-xs font-bold uppercase text-[#c7a6da]">
               Get In Touch
             </p>
 
-            <h2 className=" text-4xl font-bold leading-none">
-              Contact Us
-            </h2>
+            <h2 className=" text-4xl font-bold leading-none">Contact Us</h2>
 
             <p className="mt-3 max-w-85 text-md text-[#cfc4d9]">
-              We are here to help. Reach out to us for any inquiries or to
-              book an appointment.
+              We are here to help. Reach out to us for any inquiries or to book
+              an appointment.
             </p>
 
             <div className="mt-7 space-y-4">
-
               <div className="flex items-center gap-3">
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10">
                   <Phone size={13} />
                 </div>
 
                 <p className="text-md text-[#e0d8e7]">
-                  +254 20 734 9030 / 0732 314 372
+                  +254 72 281 4372 / 020 802 5371
                 </p>
               </div>
 
@@ -736,17 +824,13 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
                   www.qualityhealthcare.co.ke
                 </p>
               </div>
-
             </div>
           </div>
 
           {/* Form */}
           <div className="rounded-[5px] bg-white p-2 shadow-[0_15px_50px_rgba(0,0,0,.2)] sm:p-4">
-
             <form className="space-y-2">
-
               <div className="grid gap-3 sm:grid-cols-2">
-
                 <div>
                   <label className="mb-1 block text-xs font-semibold text-[#686176]">
                     Your Name (required)
@@ -770,7 +854,6 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
                     className="w-full rounded-[5px] border border-[#e7e2ef] bg-[#faf9fc] px-3 py-3 text-xs text-[#3b3450] outline-none transition focus:border-[#6c2997]"
                   />
                 </div>
-
               </div>
 
               <div>
@@ -780,11 +863,19 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 
                 <select className="w-full rounded-[5px] border border-[#e7e2ef] bg-[#faf9fc] px-3 py-3 text-xs text-[#777187] outline-none">
                   <option>Select a subject (optional)</option>
-                  <option>Medical Services</option>
-                  <option>Occupational Health</option>
-                  <option>Training</option>
-                  <option>Corporate Health</option>
-                  <option>General Inquiry</option>
+                  <option> Occupational Safety & Health  </option>
+                  <option> OSH Training</option>
+                  <option> First Aid Training</option>
+                  <option> Fire Marshal Training</option>
+                  <option> Mental Wellbeing</option>
+                  <option> Ergonomics</option>
+                  <option> Emergency Preparedness</option>
+<option>Pre-Employment Medical</option>
+<option>Annual Medical</option>
+<option>Exit Medical</option>
+<option>Return-to-Work Assessment</option>
+<option>Vocational Rehabilitation</option>
+<option>Other</option>
                 </select>
               </div>
 
@@ -807,13 +898,10 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
                 <ArrowRight size={14} />
                 Send Message
               </button>
-
             </form>
           </div>
         </div>
       </section>
-
-     
     </main>
   );
 }

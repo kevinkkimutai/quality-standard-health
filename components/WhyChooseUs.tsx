@@ -11,33 +11,33 @@ import {
 const features = [
   {
     icon: Stethoscope,
-    title: "Experienced Professionals",
-    description: "Skilled and certified healthcare specialists.",
+    title: "Occupational Safety Focus",
+    description: "Our core business is Occupational Safety and Health.",
   },
   {
     icon: Building2,
-    title: "Modern Facilities",
-    description: "Well-equipped and up-to-date medical technology.",
+    title: "Fit-to-Work Care",
+    description: "Pre-employment, annual, exit and return-to-work assessments.",
   },
   {
     icon: HeartHandshake,
-    title: "Client-Centered Approach",
-    description: "Personalized care for every individual.",
+    title: "Statutory Training",
+    description: "OSH, First Aid, Fire Marshals, Mental Wellbeing and Ergonomics.",
   },
   {
     icon: ShieldCheck,
-    title: "Compliance & Safety",
-    description: "Adherence to health and safety standards.",
+    title: "Worker-Centred Support",
+    description: "Counselling, referrals and vocational rehabilitation.",
   },
   {
     icon: Network,
-    title: "Comprehensive Services",
-    description: "Wide range of medical and occupational health services.",
+    title: "Every Workplace",
+    description: "Support for corporates, NGOs, schools, warehouses and roads.",
   },
   {
     icon: Handshake,
-    title: "Trusted Partner",
-    description: "For individuals, businesses and organizations.",
+    title: "DOSHS / NITA",
+    description: "Statutory training and certification support.",
   },
 ];
 
@@ -46,15 +46,15 @@ export default function WhyChooseUs() {
     <section className="max-w-7xl mx-auto px-2">
       <div className="mx-auto grid gap-4 lg:grid-cols-2 lg:gap-4">
         <div className="">
-          <p className="text-brand text-md">WHY CHOOSE US</p>
+         <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#682696]">WHY CHOOSE US</p>
           <h2 className="font-display text-2xl font-bold leading-tight text-navy sm:text-4xl">
-            More Than Just Healthcare
+            Safety, Health and Clinical Care Together
           </h2>
           <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-muted">
-            We combine professional expertise, modern facilities and a
-            patient-centered approach to ensure you receive the best possible
-            care. Whether it&apos;s routine check-ups, occupational health or
-            specialized medical support, we are here for you.
+            We combine professional healthcare expertise with practical
+            Occupational Safety and Health support. Whether you fly, drive,
+            sit, lift, build or work at a desk, we are here to help you work
+            safely and stay healthy.
           </p>
           <a
             href="#services"

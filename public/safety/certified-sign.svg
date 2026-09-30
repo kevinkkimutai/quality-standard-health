@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Safety certification sign</title>
+  <desc id="desc">Purple certification badge with a white check mark</desc>
+  <circle cx="120" cy="120" r="104" fill="#6b3fa0"/>
+  <path fill="#fff" d="m120 45 21 12 24-1 8 22 20 14-8 22 8 22-20 14-8 22-24-1-21 12-21-12-24 1-8-22-20-14 8-22-8-22 20-14 8-22 24 1z"/>
+  <path fill="#6b3fa0" d="m104 151-29-29 14-14 15 15 47-47 14 14z"/>
+</svg>

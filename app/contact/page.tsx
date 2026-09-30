@@ -15,7 +15,7 @@ import {
   ShieldCheck,
   X,
 } from "lucide-react";
-import heroDoctor from "@/images/hero-doctor.jpg";
+import contactHero from "@/images/services/serv2.jpg";
 
 export default function ContactPage() {
 function Eyebrow({ children }: { children: React.ReactNode }) {
@@ -37,8 +37,8 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
             }}
           >
             <Image
-              src={heroDoctor}
-              alt="A smiling doctor in a white coat holding a tablet, with the caption 'Better Care for a Healthier Tomorrow'"
+              src={contactHero}
+              alt="African healthcare professional reviewing a patient assessment on a tablet"
               fill
               sizes="52vw"
               className="object-cover object-right"
@@ -47,10 +47,10 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
           </div>
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-2 py-16 sm:px-2 lg:py-24">
+        <div className="relative mx-auto max-w-7xl px-2 py-12 sm:px-2 lg:py-16">
           <div className="max-w-2xl lg:pr-[8%]">
             <Eyebrow>Get In Touch</Eyebrow>
-            <h1 className="mt-2 font-display text-5xl font-bold  text-ink sm:text-6xl">
+            <h1 className="mt-2 font-display text-4xl font-bold  text-ink sm:text-5xl">
              Let&apos;s Talk <br />
 About Your
 <br />
@@ -78,7 +78,7 @@ About Your
                 </a>
 
               </div>
-           <div className="mt-9 grid grid-cols-3 max-w-[340px] gap-5">
+           {/* <div className="mt-9 grid grid-cols-3 max-w-[340px] gap-5">
 
                 <div>
                   <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#632391] shadow-sm">
@@ -122,12 +122,12 @@ About Your
                   </p>
                 </div>
 
-              </div>
+              </div> */}
           </div>
 
           {/* Photo, mobile/tablet only: plain card, no glow panel */}
           <div className="relative mt-10 aspect-[4/3] overflow-hidden rounded-[5px] shadow-xl lg:hidden">
-            <Image src={heroDoctor} alt="A smiling doctor in a white coat holding a tablet, with the caption 'Better Care for a Healthier Tomorrow'" fill sizes="100vw" className="object-cover" priority />
+            <Image src={contactHero} alt="African healthcare professional reviewing a patient assessment on a tablet" fill sizes="100vw" className="object-cover" priority />
           </div>
         </div>
       </section>
@@ -137,7 +137,7 @@ About Your
           CONTACT INFORMATION
       ========================================================= */}
 
-      <section className="bg-white py-14 sm:py-18 lg:py-[70px]">
+      <section className="bg-white py-10 sm:py-12 lg:py-14">
 
         <div className="mx-auto max-w-[1180px] px-2 sm:px-10 lg:px-12">
 
@@ -165,7 +165,7 @@ About Your
           </div>
 
           {/* INFO CARDS */}
-          <div className="mt-10 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-7 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
 
             {/* Phone */}
             <div className="group rounded-[5px] border border-purple-50 bg-white p-6 text-center shadow-[0_8px_30px_rgba(52,29,84,.05)] transition hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(52,29,84,.1)]">
@@ -276,7 +276,7 @@ About Your
 
       <section
         id="contact-form"
-        className="relative overflow-hidden bg-[#f8f6fd] py-14 sm:py-18 lg:py-[75px]"
+        className="relative overflow-hidden bg-[#f8f6fd] py-10 sm:py-12 lg:py-14"
       >
 
         <div className="absolute -left-[150px] top-[40px] h-[350px] w-[350px] rounded-full border-[55px] border-[#eee7f7]" />
@@ -497,6 +497,7 @@ About Your
           MAP / LOCATION SECTION
       ========================================================= */}
 
+      {false && (
       <section className="bg-white py-14 sm:py-18">
 
         <div className="mx-auto max-w-[1180px] px-2 md:px-10 lg:px-12">
@@ -635,11 +636,13 @@ About Your
           </div>
         </div>
       </section>
+      )}
 
       {/* =========================================================
           FAQ / HELP SECTION
       ========================================================= */}
 
+      {false && (
       <section className="bg-[#faf8fe] py-14 sm:py-18">
 
         <div className="mx-auto max-w-[900px] px-6 text-center">
@@ -704,6 +707,7 @@ About Your
           </div>
         </div>
       </section>
+      )}
 
       {/* =========================================================
           CTA

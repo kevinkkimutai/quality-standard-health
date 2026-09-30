@@ -9,15 +9,14 @@ export const NAV = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   { label: "Our Services", href: "/services" },
-  { label: "Our Team", href: "/team" },
   { label: "Contact Us", href: "/contact" },
 ];
 
 export const HERO_BADGES = [
-  { icon: "users", label: "Professional Team" },
-  { icon: "shield", label: "Quality Care" },
-  { icon: "building", label: "Modern Facilities" },
-  { icon: "heart", label: "Your Health Our Priority" },
+  { icon: "users", label: "Every Worker Matters" },
+  { icon: "shield", label: "Safety First" },
+  { icon: "building", label: "Fit to Work" },
+  { icon: "heart", label: "Clinical Support" },
 ];
 
 export const SERVICE_GROUPS = [
@@ -84,9 +83,9 @@ export const WHY = [
 ] as const;
 
 export const TEAM = [
-  { name: "Dr. Sarah Wanjiku", role: "Medical Director", img: "/images/team1.svg" },
-  { name: "Dr. James Mwangi", role: "Occupational Health Specialist", img: "/images/team2.svg" },
-  { name: "Sister Achieng", role: "Senior Nurse", img: "/images/team3.svg" },
+  { name: "Dr. Sarah Wanjiku", role: "Medical Director", img: "/images/team-1.png" },
+  { name: "Dr. James Mwangi", role: "Occupational Health Specialist", img: "/images/team-2.png" },
+  { name: "Sister Achieng", role: "Senior Nurse", img: "/images/team-3.png" },
 ];
 
 export const TESTIMONIALS = [

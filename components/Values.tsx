@@ -33,7 +33,7 @@ export default function Values() {
   return (
     <section className="bg-purple-50">
       <div className="section-px max-w-7xl py-4 px-2 mx-auto max-w-content">
-        <p className="text-sm text-brand">OUR VALUES</p>
+        <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#682696]">OUR VALUES</p>
         <h2 className="font-display text-2xl font-bold text-navy sm:text-4xl">
           The Principles That Guide Us
         </h2>

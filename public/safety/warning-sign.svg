@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Workplace hazard warning sign</title>
+  <desc id="desc">Yellow triangular warning sign with an exclamation mark</desc>
+  <path fill="#f4c430" stroke="#201348" stroke-width="7" stroke-linejoin="round" d="M120 24 220 207H20z"/>
+  <path fill="#201348" d="M110 78h20l-3 73h-14zm0 88h20v20h-20z"/>
+</svg>

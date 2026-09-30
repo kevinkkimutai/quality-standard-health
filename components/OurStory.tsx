@@ -9,8 +9,7 @@ export default function OurStory() {
         <div className="relative">
           <div className="relative md:aspect-[4/3] w-full h-85 overflow-hidden rounded-[5px] bg-linear-to-br from-plum to-navy shadow-card">
             
-              {/* Replace this placeholder with the real photo: */}
-              <Image src={c} alt="Quality Standard Health Care reception" fill className="object-cover" />
+              <Image src={c} alt="Healthcare professionals supporting a patient" fill className="object-cover" />
            
           </div>
 
@@ -23,7 +22,7 @@ export default function OurStory() {
                 Trusted Healthcare Partner
               </span>
               <span className="block text-xs leading-relaxed text-muted">
-                For Individuals, Families and Organizations
+                For Every Worker and Workplace
               </span>
             </span>
           </div>
@@ -39,15 +38,16 @@ export default function OurStory() {
           <p className="mt-2 text-md leading-relaxed text-muted">
             Quality Standard Health Care Ltd is a Kenyan company established
             with a simple but powerful mission — to improve the health and
-            well-being of individuals and communities through accessible,
-            high-quality and comprehensive healthcare services.
+            well-being of individuals, communities and workplaces through
+            high-quality clinical care and practical Occupational Safety and
+            Health services.
           </p>
           <p className="mt-2 text-[15px] leading-relaxed text-muted">
             We are a team of dedicated healthcare professionals committed to
-            providing personalized care, preventative health solutions and
-            timely medical support. Our goal is to be a trusted partner in
-            your health journey, always delivering excellence, compassion and
-            integrity.
+            providing workplace risk support, statutory training, fit-to-work
+            medical assessments, vocational rehabilitation and timely clinical
+            support. Our goal is to help every worker stay safe, healthy and
+            supported throughout their work journey.
           </p>
         </div>
       </div>
