@@ -57,7 +57,7 @@ About Your
  <span className="text-brand">Healthcare Needs</span>
             </h1>
             <p className="mt-3 max-w-lg text-ink/70">
-            Whether you need professional healthcare services, occupational health support, medical training or a customized healthcare solution, our team is ready to help.
+            All the safety and health needs will be customized to fit in your request, our team is ready to help.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
 
@@ -70,7 +70,7 @@ About Your
                 </a>
 
                 <a
-                  href="tel:+254207349030"
+                  href="tel:+254722814372"
                   className="inline-flex items-center gap-3 rounded-[5px] border border-[#8e59b2] px-6 py-3 text-sm font-bold text-[#62228e]"
                 >
                   <Phone size={14} />
@@ -158,7 +158,7 @@ About Your
             </h2>
 
             <p className="mx-auto mt-3 max-w-[600px] text-sm leading-[1.7] text-[#6c7089]">
-              Reach out to Quality Standard Health Care LTD for professional
+              Reach out to Quality Standard Health Care Limited for professional
               healthcare services, consultations, workplace health solutions
               and customized support.
             </p>
@@ -186,14 +186,15 @@ About Your
                 href="tel:+254207349030"
                 className="mt-1 block text-[10px] font-bold text-[#63228f]"
               >
-                020 802 5371
+                +254 72 281 4372
               </a>
 
               <a
                 href="tel:+254732314372"
                 className="block text-[10px] text-[#63228f]"
               >
-                +254 72 281 4372
+                  020 802 5371
+              
               </a>
             </div>
 
@@ -232,7 +233,7 @@ About Your
               </h3>
 
               <p className="mt-1 text-[11px] leading-[1.6] text-[#777b91]">
-                Our office is located in Nairobi.
+              CARGEN HOUSE: SUITE 403, HARAMBEE AVENUE, NRB CBD
               </p>
 
               <p className="mt-1 text-[10px] font-bold leading-[1.5] text-[#63228f]">
@@ -307,7 +308,7 @@ About Your
               </h2>
 
               <p className="mt-5 max-w-[390px] text-sm leading-[1.7] text-[#696d87]">
-                Tell us a little about what you need and a member of our
+                Tell us a little about what you need, a member of our
                 team will get back to you with the appropriate information
                 and assistance.
               </p>
@@ -497,7 +498,6 @@ About Your
           MAP / LOCATION SECTION
       ========================================================= */}
 
-      {false && (
       <section className="bg-white py-14 sm:py-18">
 
         <div className="mx-auto max-w-[1180px] px-2 md:px-10 lg:px-12">
@@ -539,9 +539,9 @@ About Your
                     </p>
 
                     <p className="mt-1 text-[11px] leading-[1.5] text-[#777b91]">
-                      P.O. Box 72409-00100
+                      Cargen House, Suite 403
                       <br />
-                      Nairobi, Kenya
+                      Harambee Avenue, Nairobi CBD
                     </p>
                   </div>
                 </div>
@@ -585,7 +585,7 @@ About Your
               </div>
 
               <a
-                href="https://maps.google.com/?q=Nairobi,Kenya"
+                href="https://www.google.com/maps/search/?api=1&query=Cargen+House%2C+Suite+403%2C+Harambee+Avenue%2C+Nairobi+CBD%2C+Kenya"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-8 inline-flex items-center gap-3 rounded-[5px] bg-[#642391] px-5 py-2.5 text-[12px] font-bold text-white"
@@ -597,46 +597,17 @@ About Your
 
             {/* MAP VISUAL */}
             <div className="relative min-h-[320px] overflow-hidden bg-[#e9e7ec]">
-
-              <div className="absolute inset-0 opacity-60">
-                <div
-                  className="h-full w-full"
-                  style={{
-                    backgroundImage:
-                      "linear-gradient(#ffffffaa 1px, transparent 1px), linear-gradient(90deg, #ffffffaa 1px, transparent 1px)",
-                    backgroundSize: "45px 45px",
-                  }}
-                />
-              </div>
-
-              {/* roads */}
-              <div className="absolute left-[-20%] top-[50%] h-[28px] w-[150%] rotate-[14deg] bg-white shadow-sm" />
-
-              <div className="absolute left-[50%] top-[-20%] h-[150%] w-[25px] rotate-[32deg] bg-white shadow-sm" />
-
-              <div className="absolute left-[15%] top-[25%] h-[15px] w-[90%] rotate-[-20deg] bg-white" />
-
-              {/* Pin */}
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-
-                <div className="flex h-[65px] w-[65px] items-center justify-center rounded-full bg-[#642391]/10">
-                  <div className="flex h-[45px] w-[45px] items-center justify-center rounded-full bg-[#642391] text-white shadow-[0_8px_25px_rgba(91,32,130,.35)]">
-                    <MapPin size={22} />
-                  </div>
-                </div>
-
-                <div className="mt-2 rounded-full bg-white px-4 py-2 text-center text-[11px] font-bold text-[#272b60] shadow-lg">
-                  Quality Standard
-                  <br />
-                  Health Care LTD
-                </div>
-              </div>
-
+              <iframe
+                title="Map to Quality Standard Health Care at Cargen House, Nairobi"
+                src="https://maps.google.com/maps?q=Cargen%20House%20Suite%20403%20Harambee%20Avenue%20Nairobi%20CBD%20Kenya&output=embed"
+                className="absolute inset-0 h-full w-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </div>
         </div>
       </section>
-      )}
 
       {/* =========================================================
           FAQ / HELP SECTION
@@ -732,7 +703,7 @@ About Your
           </h2>
 
           <p className="mt-4 max-w-[570px] text-[12px] leading-[1.7] text-[#ddd0e8]">
-            Get in touch with Quality Standard Health Care LTD today and
+            Get in touch with Quality Standard Health Care Limited today and
             let&apos;s discuss how we can support you, your family or your
             organization.
           </p>

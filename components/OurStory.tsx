@@ -36,7 +36,7 @@ export default function OurStory() {
             Health Care Ltd
           </h2>
           <p className="mt-2 text-md leading-relaxed text-muted">
-            Quality Standard Health Care Ltd is a Kenyan company established
+            Quality Standard Health Care Limited is a Kenyan company established
             with a simple but powerful mission — to improve the health and
             well-being of individuals, communities and workplaces through
             high-quality clinical care and practical Occupational Safety and

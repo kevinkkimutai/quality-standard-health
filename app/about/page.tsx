@@ -10,7 +10,7 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 
 export const metadata: Metadata = {
   title: "About Us | Quality Standard Health Care LTD",
-  description: "Quality Standard Health Care LTD is a Kenyan-registered company providing occupational health, medical, training and audit services.",
+  description: "Quality Standard Health Care Limited is a Kenyan-registered company providing occupational health, medical, training and audit services.",
 };
 
 export default function AboutPage() {

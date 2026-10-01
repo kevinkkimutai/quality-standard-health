@@ -10,14 +10,14 @@ const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfa
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Quality Standard Health Care LTD | Your Health Our Priority",
+  title: "Quality Standard Health Care Limited | Your Health Our Priority",
   description: "Comprehensive occupational health, medical, training and audit services for organizations and individuals across Kenya.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     url: SITE_URL,
     siteName: "Quality Standard Health Care LTD",
-    title: "Quality Standard Health Care LTD | Your Health Our Priority",
+    title: "Quality Standard Health Care Limited | Your Health Our Priority",
     description: "Comprehensive occupational health, medical, training and audit services across Kenya.",
     locale: "en_KE",
     images: [
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Quality Standard Health Care LTD | Your Health Our Priority",
+    title: "Quality Standard Health Care Limited | Your Health Our Priority",
     description: "Comprehensive occupational health, medical, training and audit services across Kenya.",
     images: ["/logo.png"],
   },

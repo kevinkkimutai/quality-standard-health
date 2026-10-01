@@ -35,14 +35,14 @@ const services = [
   {
     image: occupational,
     icon: HardHat,
-    title: "Occupational Safety & Health",
+    title: "Occupational Safety & Health Surveys",
     description: "Protecting workers from workplace hazards through practical OSH support.",
     items: [
-      "Occupational health assessments",
-      "Workplace health support",
-      "Occupational health surveillance",
-      "Workplace safety awareness",
-      "Risk assessments at work",
+      "OSH audits",
+      "Risk assessments",
+      "Noise control programme",
+      "Ergonomics survey",
+      "Hygiene surveys",
     ],
   },
   {
@@ -56,6 +56,7 @@ const services = [
       "Annual statutory OSH medical tests",
       "Exit medical tests",
       "Return-to-work tests after illness or injury",
+      "Vocational rehabilitation"
     ],
   },
   {

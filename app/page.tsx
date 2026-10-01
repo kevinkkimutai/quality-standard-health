@@ -27,9 +27,10 @@ import {
 
 import { useEffect, useState } from "react";
 import { HERO_BADGES, TESTIMONIALS } from "@/lib/data";
-import homeHero from "@/images/services/doc-worker.jpeg";
+import homeHero from "@/images/occupa.jpg";
 import ppe from "@/images/ppe.jpg";
-import doc from "@/images/doc.webp";
+import doc from "@/images/team-build.jpg";
+import audit from "@/images/audit.jpg";
 
 const badgeIcons = {
   users: Users,
@@ -37,8 +38,16 @@ const badgeIcons = {
   building: Building2,
   heart: Heart,
 };
+
+function Eyebrow({ children }: { children: React.ReactNode }) {
+  return (
+    <p className="text-xs font-semibold uppercase text-brand">{children}</p>
+  );
+}
+
 export default function Home() {
   const [testimonialIndex, setTestimonialIndex] = useState(0);
+  const [heroSlideIndex, setHeroSlideIndex] = useState(0);
   const testimonial = TESTIMONIALS[testimonialIndex];
 
   const changeTestimonial = (direction: number) => {
@@ -51,10 +60,45 @@ export default function Home() {
   useEffect(() => {
     const interval = window.setInterval(() => {
       changeTestimonial(1);
-    }, 3000);
+    }, 5000);
 
     return () => window.clearInterval(interval);
   }, []);
+
+  const heroSlides = [
+    {
+      badge: "A Step to Safety is a Step to Health",
+      title: "Occupational Safety & Health",
+      description:
+        "Our core business is Occupational Safety and Health. <br /> We conduct medical assessments for fit to work <br /> We offer Occupational Safety and health trainings as well as hygiene surveys",
+      image: homeHero,
+      showButtons: true,
+    },
+    {
+      badge: "Clinical Assessments",
+      title: "Workforce health checks that keep people safe and ready.",
+      description:
+        "We support safer operations through pre-employment, annual and exit medical assessments that protect workers and keep your organization compliant.",
+      image: "/images/quality.jpg",
+      showButtons: false,
+    },
+    {
+      badge: "Workplace Audits",
+      title: "Spot hazards early and improve every work environment.",
+      description:
+        "Our workplace audits and risk reviews help organizations identify gaps, reduce incidents and create safer, healthier operations across every site.",
+      image: audit,
+      showButtons: false,
+    },
+  ];
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setHeroSlideIndex((current) => (current + 1) % heroSlides.length);
+    }, 10000);
+
+    return () => window.clearInterval(interval);
+  }, [heroSlides.length]);
 
   const services = [
     {
@@ -155,94 +199,108 @@ export default function Home() {
       text: "Wellbeing, rehabilitation and return-to-work support throughout the worker journey.",
     },
   ];
-  function Eyebrow({ children }: { children: React.ReactNode }) {
-    return (
-      <p className="text-xs font-semibold uppercase text-brand">{children}</p>
-    );
-  }
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-[#201348]">
-      <section className="relative overflow-hidden bg-linear-to-b from-brand-soft to-white">
-        {/* Photo, desktop only: fills the full section height, feathered on the left with a CSS mask
-            (not a baked-in image) so it always covers correctly regardless of the section's actual height. */}
-        <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[50%] lg:block">
-          <div className="absolute -inset-x-10 -inset-y-16 rounded-[4rem] bg-brand/25 blur-3xl" />
-          <div
-            className="absolute inset-0 overflow-hidden"
-            style={{
-              WebkitMaskImage:
-                "linear-gradient(to right, transparent 0%, black 30%)",
-              maskImage: "linear-gradient(to right, transparent 0%, black 30%)",
-            }}
-          >
-            <Image
-              src={homeHero}
-              alt="African healthcare professional checking a patient's blood pressure"
-              fill
-              sizes="52vw"
-              className="object-cover object-right"
-              priority
-            />
-          </div>
+      <section className="relative overflow-hidden bg-[#f5f0ff] h-[65vh]">
+        <div className="absolute inset-0">
+          {heroSlides.map((slide, index) => (
+            <div
+              key={slide.title}
+              className={`absolute inset-0 transition-opacity duration-700 ${
+                index === heroSlideIndex ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <Image
+                src={slide.image}
+                alt={slide.title}
+                fill
+                priority={index === 0}
+                className="object-cover"
+              />
+            </div>
+          ))}
         </div>
 
-        <div className="relative mx-auto max-w-7xl ps-2 py-16 sm:ps-2 lg:py-24">
-          <div className="max-w-xl lg:pr-[8%]">
-            <Eyebrow>A Step to Safety is a Step to Health</Eyebrow>
-            <h1 className="mt-1 font-display text-4xl font-bold  text-ink sm:text-5xl">
-              Occupational <br /> <span className="text-brand">Safety</span> &{" "}
-              <span className="text-brand">Health</span>
+        <div className="absolute inset-0 bg-linear-to-r from-[#150d26]/90 via-[#1e1435]/70 to-[#1f1434]/35" />
+
+        <div className="relative mx-auto max-w-7xl px-4 py-9 sm:px-6 lg:px-8 lg:py-18">
+          <div className="max-w-xl text-white">
+            <span className="inline-block rounded-full border border-white bg-brand-dark px-3 py-1 text-sm italic uppercase font-semibold text-white">
+              {heroSlides[heroSlideIndex].badge}
+            </span>
+            <h1 className="mt-4 text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+              {heroSlides[heroSlideIndex].title}
             </h1>
-            <p className="mt-3 text-ink/70">
-              Our core business is Occupational Safety and Health. We combine
-              safety signs, clinical assessments and practical training to
-              protect every worker in every workplace.
+            <p className="mt-4 max-w-lg text-base text-white/80 sm:text-lg">
+              {heroSlides[heroSlideIndex].description.split("<br />").map((line, index) => (
+                <span key={`${line}-${index}`} className="block">
+                  {line}
+                </span>
+              ))}
             </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <Link
-                href="/services"
-                className="inline-flex items-center gap-2 rounded-[5px] bg-brand-dark px-4 py-3 text-sm font-semibold text-white hover:bg-brand-deep"
-              >
-                Explore Our Services
-                <ArrowRight size={16} />
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-[5px] border border-brand-dark px-4 py-3 text-sm font-semibold text-brand-dark hover:bg-brand-soft"
-              >
-                Request a Consultation <ArrowRight size={16} />
-              </Link>
-            </div>
-            <ul className="mt-9 grid grid-cols-4 gap-3 text-center">
-              {HERO_BADGES.map((b) => {
-                const I = badgeIcons[b.icon as keyof typeof badgeIcons];
-                return (
-                  <li
-                    key={b.label}
-                    className="flex flex-col items-center gap-2"
-                  >
-                    <span className="grid size-11 place-items-center rounded-full bg-white text-brand shadow-sm">
-                      <I size={17} />
-                    </span>
-                    <span className="text-[11px] font-semibold leading-tight text-ink">
-                      {b.label}
-                    </span>
-                  </li>
-                );
-              })}
-            </ul>
+
+            {heroSlides[heroSlideIndex].showButtons && (
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link
+                  href="/services"
+                  className="inline-flex items-center gap-2 rounded-[5px] bg-brand-dark px-4 py-3 text-sm font-semibold text-white transition hover:bg-brand-deep"
+                >
+                  Explore Our Services
+                  <ArrowRight size={16} />
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 rounded-[5px] border border-white/40 bg-white/5 px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+                >
+                  Request a Consultation <ArrowRight size={16} />
+                </Link>
+              </div>
+            )}
           </div>
 
-          {/* Photo, mobile/tablet only: plain card, no glow panel */}
-          <div className="relative mt-10 aspect-[4/3] overflow-hidden rounded-[5px] shadow-xl lg:hidden">
-            <Image
-              src={homeHero}
-              alt="African healthcare professional checking a patient's blood pressure"
-              fill
-              sizes="100vw"
-              className="object-cover"
-              priority
-            />
+          <div className="mt-10 flex flex-wrap items-center justify-between gap-4">
+            <div className="flex items-center gap-2">
+              {heroSlides.map((slide, index) => (
+                <button
+                  key={slide.title}
+                  type="button"
+                  aria-label={`Show ${slide.title}`}
+                  aria-current={index === heroSlideIndex ? "true" : undefined}
+                  onClick={() => setHeroSlideIndex(index)}
+                  className={`h-2.5 rounded-full transition-all ${
+                    index === heroSlideIndex
+                      ? "w-10 bg-white"
+                      : "w-2.5 bg-white/50 hover:bg-white/80"
+                  }`}
+                />
+              ))}
+            </div>
+
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                aria-label="Previous hero slide"
+                onClick={() =>
+                  setHeroSlideIndex(
+                    (current) =>
+                      (current - 1 + heroSlides.length) % heroSlides.length,
+                  )
+                }
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/40 bg-white/10 text-white transition hover:bg-white/20"
+              >
+                <ChevronLeft size={16} />
+              </button>
+              <button
+                type="button"
+                aria-label="Next hero slide"
+                onClick={() =>
+                  setHeroSlideIndex((current) => (current + 1) % heroSlides.length)
+                }
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/40 bg-white/10 text-white transition hover:bg-white/20"
+              >
+                <ChevronRight size={16} />
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -254,26 +312,26 @@ export default function Home() {
               Who We Are
             </p>
 
-            <h2 className="mt-2 max-w-97.5 text-xl font-bold text-[#21194b] sm:text-4xl">
-              Healthier Workers.
-              <br />
+            <h2 className="mt-2  text-xl font-bold text-[#21194b] sm:text-4xl">
               Safer Workplaces.
+              <br />
+              Healthier, Protected Teams.
             </h2>
 
             <p className="mt-3 max-w-125 text-md text-[#777187] leading-tight">
-              Quality Standard Health Care LTD is committed to promoting
-              Occupational Safety and Health through professional clinical
-              care, workplace safety training, medical assessments, worker
-              wellbeing and rehabilitation support.
+              Quality Standard Health Care Limited is committed to improving
+              workplace safety through professional clinical care, safety
+              training, occupational health assessments, and practical
+              prevention strategies that reduce risk before harm occurs.
             </p>
             <p className="mt-1 max-w-125 text-md text-[#777187] leading-tight">
               Our approach brings together{" "}
               <span className="text-brand ">
                 {" "}
-                clinical health and occupational safety{" "}
+                occupational safety and clinical health{" "}
               </span>
-              to help organizations protect their most important resource:
-              their people.
+              to help organizations protect their workforce, strengthen
+              compliance, and create safer, more resilient workplaces.
             </p>
 
             <Link
@@ -350,15 +408,11 @@ export default function Home() {
                     </h3>
 
                     <p className="mt-2 text-sm leading-[1.65] text-[#77718b]">
-                      We are committed to providing high-quality clinical care
-                      and standardized Occupational Safety and Health
-                      practices.
-                      <br />
-                      We focus on listening to the needs of our clients and
-                      workers, delivering practical solutions and helping
-                      organizations meet their workplace health and safety
-                      responsibilities so every worker can be safe, healthy
-                      and fit to work.
+                      As our name suggests, we are committed to offer high quality healthcare and standardized 
+practices in line with OSHA 2007. We are also guided and refer to other best practices of the 
+international standards focusing in OSH. <br /> We address the client as an individual customer; tailor 
+make standardized service which go a long way to satisfy the need and achieve timely 
+compliance. 
                     </p>
                   </div>
                 </div>
@@ -405,12 +459,13 @@ export default function Home() {
               SAFETY + CLINICAL CARE
             </p>
             <h2 className="mt-2 text-xl font-bold text-[#21194b] sm:text-4xl">
-              Read the signs. Prevent the harm. Protect the worker.
+              Read the signs. Prevent the risk. Protect the worker.
             </h2>
             <p className="mt-3 text-md text-[#777187]">
               Whether you fly, drive, sit, lift, build or manually make bread,
-              your work affects your health. We use safety signs and clinical
-              signs together to identify risk early and support healthier work.
+              your work affects your health and your safety. We combine safety
+              signals, clinical checks and practical prevention to identify
+              hazards early and reduce workplace harm.
             </p>
           </div>
 
