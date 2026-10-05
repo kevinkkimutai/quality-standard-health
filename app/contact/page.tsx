@@ -555,14 +555,14 @@ About Your
                     <p className="text-[11px] font-bold text-[#202861]">
                       Telephone
                     </p>
-
+                    <p className="text-[11px] text-[#777b91]">
+                      +254 72 281 4372
+                    </p>
                     <p className="mt-1 text-[11px] text-[#777b91]">
                       020 802 5371
                     </p>
 
-                    <p className="text-[11px] text-[#777b91]">
-                      +254 72 281 4372
-                    </p>
+                    
                   </div>
                 </div>
 

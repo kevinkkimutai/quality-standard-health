@@ -100,70 +100,76 @@ export default function Home() {
     return () => window.clearInterval(interval);
   }, [heroSlides.length]);
 
-  const services = [
-    {
-      icon: HardHat,
-      title: "Occupational Safety & Health",
-      items: [
-        "Occupational health assessments",
-        "Workplace health support",
-        "Occupational health surveillance",
-        "Workplace safety awareness",
-        "Risk-related health assessments",
-      ],
-    },
-    {
-      icon: FileCheck2,
-      title: "Fit to Work Medical Assessments",
-      items: [
-        "Fit-to-work certification",
-        "Pre-employment medical tests",
-        "Annual statutory OSH medical tests",
-        "Exit medical tests",
-        "Return-to-work assessments after illness, injury or sick leave",
-      ],
-    },
-    {
-      icon: ShieldCheck,
-      title: "Audits & Other Services",
-      items: [
-        "Occupational Safety and Health audit",
-        "Risk assessments at work",
-        "Fire safety audits",
-        "Environmental impact Audit and Assessments",
-      ],
-    },
-    {
-      icon: Flame,
-      title: "Statutory Training & Certification",
-      items: [
-        "Certified by DOSHS / NITA",
-        "Occupational Safety & Health",
-        "Occupational First Aid",
-        "Fire Marshals",
-        "Mental Wellbeing",
-        "Ergonomics",
-        "Emergency preparedness",
-      ],
-    },
-    {
-      icon: HeartPulse,
-      title: "Vocational Rehabilitation",
-      items: [
-        "Counselling",
-        "Sessional referrals",
-        "Return-to-work support",
-        "Post-injury support",
-        "Post-illness support",
-      ],
-    },
-  ];
+const services = [
+  {
+    icon: HardHat,
+    title: "Occupational Safety & Health",
+    items: [
+      "Occupational health assessments",
+      "Workplace health support",
+      "Occupational health surveillance",
+      "Workplace safety awareness",
+      "Risk-related health assessments",
+    ],
+  },
+
+  {
+    icon: FileCheck2,
+    title: "Fit to Work Medical Assessments",
+    items: [
+      "Fit-to-work certification",
+      "Pre-employment medical tests",
+      "Annual statutory OSH medical tests",
+      "Exit medical tests",
+      "Return-to-work assessments",
+    ],
+  },
+
+  {
+    icon: ShieldCheck,
+    title: "OSH Audits & Surveys",
+    items: [
+      "Safety audits",
+      "Fire safety audits",
+      "Risk assessments",
+      "Environmental audits & assessments",
+      "Occupational hygiene surveys",
+      "Ergonomic surveys",
+    ],
+  },
+
+  {
+    icon: Flame,
+    title: "Statutory Training & Certification",
+    items: [
+      "Certified by DOSHS / NITA",
+      "Occupational Safety & Health",
+      "Occupational First Aid",
+      "Fire Marshals",
+      "Mental Wellbeing",
+      "Ergonomics",
+      "Emergency preparedness",
+    ],
+  },
+
+  {
+    icon: HeartPulse,
+    title: "Vocational Rehabilitation",
+    items: [
+      "Counselling",
+      "Sessional referrals",
+      "Return-to-work support",
+      "Post-injury support",
+      "Post-illness support",
+    ],
+  },
+];
 
   const safetySigns = [
-    ["/safety/ppe-sign.svg", "Prevent", "PPE, hazard awareness and safer work practices."],
-    ["/safety/warning-sign.svg", "Protect", "Risk assessment, fire safety and emergency readiness."],
-    ["/safety/first-aid-sign.svg", "Assess", "Clinical checks that confirm workers are fit to work."],
-    ["/safety/certified-sign.svg", "Support", "Training, certification and rehabilitation through recovery."],
+    ["/safety/ppe-sign.svg", "Prevent", "Hazard awareness and safer work practices."],
+    ["/safety/warning-sign.svg", "Protect", "Safety audits, risk assessment and emergency readiness."],
+    ["/safety/first-aid-sign.svg", "Assess", "Vocational rehabilitation and clinical checks to support recovery and fitness to work."],
+    ["/safety/certified-sign.svg", "Support", "OSH trainings, health trainings with certification."],
   ] as const;
 
   const workerCategories = [
@@ -459,7 +465,7 @@ compliance.
               SAFETY + CLINICAL CARE
             </p>
             <h2 className="mt-2 text-xl font-bold text-[#21194b] sm:text-4xl">
-              Read the signs. Prevent the risk. Protect the worker.
+              Prevent the risk. Protect the worker.
             </h2>
             <p className="mt-3 text-md text-[#777187]">
               Whether you fly, drive, sit, lift, build or manually make bread,
