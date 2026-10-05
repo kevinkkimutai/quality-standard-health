@@ -95,7 +95,7 @@ export default function Home() {
   useEffect(() => {
     const interval = window.setInterval(() => {
       setHeroSlideIndex((current) => (current + 1) % heroSlides.length);
-    }, 10000);
+    }, 30000);
 
     return () => window.clearInterval(interval);
   }, [heroSlides.length]);
