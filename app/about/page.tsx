@@ -65,13 +65,12 @@ export default function AboutPage() {
             WHAT WE STAND FOR
           </p>
           <h2 className="mt-2 max-w-3xl text-xl font-bold text-[#21194b] sm:text-4xl">
-            Safety signs and clinical signs.
+            A fit worker for any workplace
           </h2>
           <p className="mt-3 max-w-3xl text-md leading-[1.6] text-[#777187]">
-            From PPE and hazard warnings to medical assessments and first aid,
-            our work connects prevention with care. We support corporates,
-            NGOs, schools, warehouses, workshops, call centres, roads and every
-            other workplace where people work.
+           From Medical assesments, workplace hygiene surveys and audits, 
+           including all OSH trainings. We support NGOs,schools, warehouses, 
+           workshops, call centres, roads and every other workplace
           </p>
           <div className="mt-7 grid grid-cols-2 gap-4 sm:grid-cols-4">
             {[
