@@ -13,8 +13,8 @@ const contacts = [
   },
   {
     icon: MapPin,
-    title: "Visit Us",
-    lines: ["P.O. Box 72409-00100, Nairobi, Kenya"],
+    title: "Address",
+    lines: ["Cargen House, Suite 403 Harambee Avenue, Nairobi CBD"],
   },
 ];
 
