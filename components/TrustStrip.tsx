@@ -9,7 +9,7 @@ const items = [
   {
     icon: Users2,
     title: "Professional Team",
-    subtitle: "Doctors, Nurses & Specialists",
+    subtitle: "Doctors, Nurses, hygienists and all safety experts",
   },
   {
     icon: HeartHandshake,

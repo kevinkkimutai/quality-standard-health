@@ -65,7 +65,7 @@ export default function AboutPage() {
             WHAT WE STAND FOR
           </p>
           <h2 className="mt-2 max-w-3xl text-xl font-bold text-[#21194b] sm:text-4xl">
-            Safety signs and clinical signs, read together.
+            Safety signs and clinical signs.
           </h2>
           <p className="mt-3 max-w-3xl text-md leading-[1.6] text-[#777187]">
             From PPE and hazard warnings to medical assessments and first aid,

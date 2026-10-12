@@ -1,5 +1,5 @@
 export const PHONE = "020 802 5371";
-export const PHONE_ALT = "0732 314 372";
+export const PHONE_ALT = "+254 72 281 4372";
 export const EMAIL = "info@qualityhealthcare.co.ke";
 export const ADDRESS = "P.O. Box 72409-00100, Nairobi, Kenya";
 export const WEBSITE = "https://qsh.maneno.co.ke";

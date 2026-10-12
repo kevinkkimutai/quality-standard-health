@@ -527,7 +527,7 @@ export default function Home() {
                 <div>
                   <p className="text-xs font-bold">Call Us</p>
                   <p className="text-[11px] text-[#d8cce1]">
-                    020 802 5371 / 0732 314 372
+                    +254 72 281 4372 / 020 802 5371 
                   </p>
                 </div>
               </div>
